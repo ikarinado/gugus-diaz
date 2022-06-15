@@ -6,7 +6,7 @@ function ItemListContainer(props){
   return(
     <div style={{ padding:10, fontSize:30, color:"#d41676" }}>
       {props.gretting}
-      <ItemCount stock={5} inicial={1}/>
+      <ItemCount stock={10} inicial={1}/>
     </div>
 
 

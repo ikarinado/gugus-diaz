@@ -1,13 +1,14 @@
+import { CenterFocusStrong } from "@mui/icons-material";
 import React, { useState } from "react";
 
 function ItemCount(props) {
   const [count, setcount] = useState(props.inicial);
 
   return (
-    <div>
-      <button onClick={() => setcount(count + 1)}> + </button>
+    <div style={{display: "flex",justifyContent: "center",alignItems: "center", gap: 10 }}>
+      <button disabled={count === props.inicial} onClick={() => setcount(count - 1)}> - </button>
       <span>{count}</span>
-      <button onClick={() => setcount(count - 1)}> - </button>
+      <button disabled={count === props.stock} onClick={() => setcount(count + 1)}> + </button>
     </div>
   );
 }
