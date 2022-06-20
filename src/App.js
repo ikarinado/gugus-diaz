@@ -1,28 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-import Menu from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-
+import "./App.css";
+import Menu from "./components/NavBar";
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDatailContainer from "./components/ItemDetailContainer";
+import React,{useState} from 'react'
 function App() {
+  const [seleccionado, setSeleccionado] = useState(null);
+  const onSelect=(producto)=>{
+    setSeleccionado(producto)
+  }
   return (
-    <div className="App">
-      <Menu/>
-      <ItemListContainer gretting="mensaje gretting" />
-
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Menu />
+      {seleccionado ? (
+        <ItemDatailContainer producto={seleccionado}/>
+      ) : (
+        <ItemListContainer onSelect={onSelect} gretting='mensaje gretting' />
+      )}
     </div>
   );
 }

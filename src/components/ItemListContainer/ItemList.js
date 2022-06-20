@@ -33,6 +33,7 @@ const products = [
 ];
 
 function ItemList(props) {
+
   const [list, setList] = useState([]);
 
   useEffect(() => {
@@ -59,13 +60,10 @@ function ItemList(props) {
         {list.map((product) => (
           <Grid item xs={4}>
             <Item
+              onSelect={props.onSelect}
               key={product.id}
-              id={product.id}
-              titulo={product.titulo}
-              precio={product.precio}
-              imagen={product.imagen}
-              stock={product.stock}
-              detalle={product.detalle}
+              product={product}
+
             />
           </Grid>
         ))}

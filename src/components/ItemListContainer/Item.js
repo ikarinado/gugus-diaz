@@ -9,9 +9,11 @@ import {
 
 import React from "react";
 
-function Item(prop) {
-  const { id, titulo, precio, imagen, stock, detalle } = prop;
+function Item(props) {
+
+  const { id, titulo, precio, imagen, stock, detalle } = props.product;
   return (
+
     <Card>
     <CardMedia
         component='img'
@@ -35,7 +37,8 @@ function Item(prop) {
       </CardContent>
 
       <CardActions>
-        <Button size='small' variant='contained'>Ver mas</Button>
+        {props.onSelect && <Button onClick={()=>props.onSelect(props.product)} size='small' variant='contained'>Ver mas</Button>}
+
       </CardActions>
     </Card>
   );
