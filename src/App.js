@@ -12,7 +12,7 @@ function App() {
     <div className='App'>
       <Menu />
       {seleccionado ? (
-        <ItemDatailContainer producto={seleccionado}/>
+        <ItemDatailContainer producto={seleccionado} onSelect={onSelect}/>
       ) : (
         <ItemListContainer onSelect={onSelect} gretting='mensaje gretting' />
       )}

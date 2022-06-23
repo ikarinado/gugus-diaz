@@ -1,12 +1,12 @@
 import React from "react";
 import ItemDetail from "./ItemDetail";
+import {Button} from "@mui/material";
 
 function ItemDatailContainer(props) {
-
   return (
     <div>
-      <ItemDetail producto={props.producto} />
-
+      <Button onClick={() => props.onSelect(null)}>Atras</Button>
+      <ItemDetail product={props.producto} />
     </div>
   );
 }
