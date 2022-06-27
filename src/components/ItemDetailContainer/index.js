@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
-import { Button } from "@mui/material";
 import { productos } from "../../util/productos";
 import { useParams } from "react-router";
 
@@ -24,7 +23,6 @@ function ItemDatailContainer(props) {
   }, [itemId]);
   return (
     <div>
-      <Button onClick={() => props.onSelect(null)}>Atras</Button>
       <ItemDetail producto={producto} />
     </div>
   );
