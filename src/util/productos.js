@@ -5,7 +5,7 @@ export const productos = [
     precio: "$ 1500",
     categoria: 1,
     imagen:
-      "https://www.lolitamoda.com/uploads/ckeditor/pictures/481/content_guardarropa_b_sico_para_ni_as.jpg",
+      "https://admin.americabebes.com.ar/files/productos/img_1649860830731.jpg",
     stock: "Stock disponible: 10",
     detalle: "Buzo de algodon con friza",
   },
@@ -15,7 +15,7 @@ export const productos = [
     precio: "$ 1300",
     categoria: 2,
     imagen:
-      "https://www.lolitamoda.com/uploads/ckeditor/pictures/481/content_guardarropa_b_sico_para_ni_as.jpg",
+      "https://www.cottonclub.com.ar/pub/media/catalog/product/cache/65e2670acbf1788249a95924f3789a80/7/4/740_todas_copia_1.jpg",
     stock: "Stock disponible: 10",
     detalle: "Polera de algodon",
   },
@@ -25,7 +25,7 @@ export const productos = [
     precio: "$ 900",
     categoria: 3,
     imagen:
-      "https://www.lolitamoda.com/uploads/ckeditor/pictures/481/content_guardarropa_b_sico_para_ni_as.jpg",
+      "https://http2.mlstatic.com/D_NQ_NP_824836-MLA44185084527_112020-W.jpg",
     stock: "Stock disponible: 10",
     detalle: "musculosa de algodon con lycra",
   },

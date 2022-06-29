@@ -23,7 +23,7 @@ function ItemListContainer(props) {
         setList(result);
       })
       .catch((err) => {
-        console.log("Captura cualquier error en el proceso");
+
       });
   }, [id]);
 
