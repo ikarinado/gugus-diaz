@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const pages = [
   {
     id: 1,
-    name: "Productos",
+    name: "Mamás",
   },
   { id: 2, name: "Niños" },
   { id: 3, name: "Niñas" },

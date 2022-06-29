@@ -9,7 +9,10 @@ import {
 } from "@mui/material";
 
 function ItemDetail(props) {
-  const { id, titulo, precio, imagen, stock, detalle } = props.product;
+  if (!props.producto) {
+    return <div>Cargando!</div>;
+  }
+  const { id, titulo, precio, imagen, stock, detalle } = props.producto;
 
   return (
     <div>
