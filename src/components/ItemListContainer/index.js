@@ -29,8 +29,6 @@ function ItemListContainer(props) {
 
   return (
     <div style={{ padding: 10, fontSize: 30, color: "#d41676" }}>
-      {props.gretting}
-      <ItemCount stock={10} inicial={1} />
       <ItemList list={list} onSelect={props.onSelect} />
     </div>
   );
