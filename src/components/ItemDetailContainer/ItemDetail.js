@@ -12,6 +12,9 @@ import ItemCount from "../ItemListContainer/ItemCount";
 
 function ItemDetail(props) {
   const [cantidad, setCantidad] = useState(1);
+  const onAdd = (qty) => {
+    setCantidad(qty)
+  }
   if (!props.producto) {
     return <div>Cargando!</div>;
   }
@@ -29,7 +32,7 @@ function ItemDetail(props) {
         />
         <CardContent>
           <Typography gutterBottom variant='h2' component='div'>
-            {titulo} {cantidad}
+            {titulo}
           </Typography>
           <Typography gutterBottom variant='body1' component='div'>
             {detalle}
@@ -43,10 +46,11 @@ function ItemDetail(props) {
         </CardContent>
 
         <CardActions>
-          <ItemCount onAdd={setCantidad} inicial={cantidad} />
-          <button>
-          <Link to="cart">Terminar mi compra</Link>
-          </button>
+          <ItemCount onAdd={onAdd} inicial={1} />
+          <Button
+              variant='contained'>
+            <Link to="cart">Comprar:  {cantidad}</Link>
+          </Button>
           {props.onSelect && (
             <Button
               onClick={() => props.onSelect(props.product)}
