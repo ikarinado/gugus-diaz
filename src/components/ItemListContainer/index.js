@@ -23,14 +23,12 @@ function ItemListContainer(props) {
         setList(result);
       })
       .catch((err) => {
-        console.log("Captura cualquier error en el proceso");
+
       });
   }, [id]);
 
   return (
     <div style={{ padding: 10, fontSize: 30, color: "#d41676" }}>
-      {props.gretting}
-      <ItemCount stock={10} inicial={1} />
       <ItemList list={list} onSelect={props.onSelect} />
     </div>
   );

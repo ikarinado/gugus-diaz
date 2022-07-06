@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
@@ -7,12 +7,19 @@ import {
   CardActions,
   Button,
 } from "@mui/material";
+import { Link } from "react-router-dom";
+import ItemCount from "../ItemListContainer/ItemCount";
 
 function ItemDetail(props) {
+  const [cantidad, setCantidad] = useState(1);
+  const onAdd = (qty) => {
+    setCantidad(qty)
+  }
   if (!props.producto) {
     return <div>Cargando!</div>;
   }
   const { id, titulo, precio, imagen, stock, detalle } = props.producto;
+
 
   return (
     <div>
@@ -39,6 +46,11 @@ function ItemDetail(props) {
         </CardContent>
 
         <CardActions>
+          <ItemCount onAdd={onAdd} inicial={1} />
+          <Button
+              variant='contained'>
+            <Link to="cart">Comprar:  {cantidad}</Link>
+          </Button>
           {props.onSelect && (
             <Button
               onClick={() => props.onSelect(props.product)}
