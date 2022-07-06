@@ -1,8 +1,11 @@
-import { CenterFocusStrong } from "@mui/icons-material";
-import React, { useState } from "react";
+import { Button, IconButton, Typography } from "@mui/material";
+import React, { useState, useContext } from "react";
+import { CartContext } from "../../CartContext";
 
 function ItemCount(props) {
   const [count, setcount] = useState(props.inicial);
+  const { productos, removeProductos, empresa } = useContext(CartContext);
+
 
   return (
     <div
@@ -11,24 +14,33 @@ function ItemCount(props) {
         justifyContent: "center",
         alignItems: "center",
         gap: 10,
+        flexDirection: 'column',
+        margin: '0 auto'
       }}
     >
-      <button
+      <div style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 10,
+      }}>
+      <Button
         disabled={count === props.inicial}
         onClick={() => setcount(count - 1)}
+        variant="contained"
       >
-        {" "}
-        -{" "}
-      </button>
-      <span>{count}</span>
-      <button
+        -
+      </Button>
+      <Typography variant="h4">{count}</Typography>
+      <Button
         disabled={count === props.stock}
         onClick={() => setcount(count + 1)}
+        variant="contained"
       >
-        {" "}
-        +{" "}
-      </button>
-      <button onClick={()=>props.onAdd(count)}>Agregar</button>
+        +
+      </Button>
+      </div>
+      <Button onClick={()=>props.onAdd(count)} variant="outlined">Agregar</Button>
     </div>
   );
 }
