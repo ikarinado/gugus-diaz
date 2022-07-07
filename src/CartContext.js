@@ -19,6 +19,9 @@ export default ({ children }) => {
       };
       setProductos([...productos, pr]);
     },
+    vaciarCarrito: () => {
+      setProductos([])
+    }
   };
 
   return <CartContext.Provider value={store}>{children}</CartContext.Provider>;

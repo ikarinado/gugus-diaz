@@ -7,13 +7,16 @@ import {
   ListItemText,
   Typography,
   List,
+  Button,
 } from "@mui/material";
 import React, { useContext } from "react";
 import { CartContext } from "../../CartContext";
 
 function Cart() {
-  const { productos, removeProductos } = useContext(CartContext);
-  if (productos.length === 0) {
+  const { productos, removeProductos, vaciarCarrito } = useContext(CartContext);
+  const cantP = productos.length;
+
+  if (cantP === 0) {
     return (
       <Card>
         <CardContent>
@@ -23,13 +26,29 @@ function Cart() {
     );
   }
 
+  let preciototal = 0;
+  productos.forEach((producto) => {
+    preciototal = preciototal + producto.producto.precio * producto.cantidad;
+  });
+
   return (
     <div>
+      <Typography>
+        Cantidad de productos:<strong>{cantP}</strong>
+      </Typography>
+      <Typography>
+        Precio de la compra:<strong>${preciototal}</strong>
+      </Typography>
+
       <List>
         {productos.map((product, index) => (
           <ListItem
             secondaryAction={
-              <IconButton onClick={() => removeProductos(index)} edge='end' aria-label='delete'>
+              <IconButton
+                onClick={() => removeProductos(index)}
+                edge='end'
+                aria-label='delete'
+              >
                 <Delete />
               </IconButton>
             }
@@ -41,6 +60,9 @@ function Cart() {
           </ListItem>
         ))}
       </List>
+      <Button onClick={() => vaciarCarrito()} variant='contained'>
+        Limpiar carrito
+      </Button>
     </div>
   );
 }
