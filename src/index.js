@@ -5,7 +5,17 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import CartContext from "./CartContext";
-
+import { initializeApp } from "firebase/app";
+const firebaseConfig = {
+  apiKey: "AIzaSyCyeFnWgOopa5j6q7wv_P-0rfweh6_XjKg",
+  authDomain: "gugus-ecommerce.firebaseapp.com",
+  projectId: "gugus-ecommerce",
+  storageBucket: "gugus-ecommerce.appspot.com",
+  messagingSenderId: "274114704621",
+  appId: "1:274114704621:web:e253c3719cf9b8435848e4",
+  measurementId: "G-FDXX7P00GS"
+};
+const app = initializeApp(firebaseConfig);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
