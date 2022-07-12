@@ -43,6 +43,7 @@ function Cart() {
       <List>
         {productos.map((product, index) => (
           <ListItem
+            key={product.producto.titulo}
             secondaryAction={
               <IconButton
                 onClick={() => removeProductos(index)}
