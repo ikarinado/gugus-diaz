@@ -44,9 +44,9 @@ const ResponsiveAppBar = () => {
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Link to={`/category/${page.id}`}>
+              <Link key={page.name} to={`/category/${page.id}`}>
                 <Typography
-                  key={page.name}
+
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
                   {page.name}
