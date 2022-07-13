@@ -11,10 +11,10 @@ function ItemList(props) {
     <div>
       <Grid container spacing={2}>
         {props.list.map((product) => (
-          <Grid item xs={4}>
+          <Grid key={product.id} item xs={4}>
             <Item
               onSelect={props.onSelect}
-              key={product.id}
+
               product={product}
             />
           </Grid>

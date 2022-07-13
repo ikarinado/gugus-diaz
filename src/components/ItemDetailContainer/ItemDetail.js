@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   Card,
   CardContent,
@@ -9,17 +9,20 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemListContainer/ItemCount";
+import { CartContext } from "../../CartContext";
 
 function ItemDetail(props) {
   const [cantidad, setCantidad] = useState(1);
+  const { productos, removeProductos, empresa, addProducto } =
+    useContext(CartContext);
   const onAdd = (qty) => {
-    setCantidad(qty)
-  }
+    // setCantidad(qty)
+    addProducto(props.producto, qty);
+  };
   if (!props.producto) {
     return <div>Cargando!</div>;
   }
   const { id, titulo, precio, imagen, stock, detalle } = props.producto;
-
 
   return (
     <div>
@@ -47,10 +50,9 @@ function ItemDetail(props) {
 
         <CardActions>
           <ItemCount onAdd={onAdd} inicial={1} />
-          <Button
-              variant='contained'>
-            <Link to="cart">Comprar:  {cantidad}</Link>
-          </Button>
+          <Link to='/cart'>
+            <Button variant='contained'>Terminar compra</Button>
+          </Link>
           {props.onSelect && (
             <Button
               onClick={() => props.onSelect(props.product)}

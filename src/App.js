@@ -6,6 +6,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import ItemDetail from "./components/ItemDetailContainer/ItemDetail";
 import Cart from "./components/Cart";
+
 function App() {
   return (
     <div className='App'>
