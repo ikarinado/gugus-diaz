@@ -4,13 +4,19 @@ import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
 import { productos } from "../../util/productos";
 import { useParams } from "react-router";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 function ItemListContainer(props) {
   const { id } = useParams();
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    const task = new Promise((resolve, reject) => {
+    const db = getFirestore();
+    const collections = collection(db, "productos");
+    getDocs(collections).then((snapshot) => {
+      setList(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    });
+    /*const task = new Promise((resolve, reject) => {
       let res = productos;
       if (id) {
         res = productos.filter((producto) => producto.categoria == id);
@@ -24,7 +30,7 @@ function ItemListContainer(props) {
       })
       .catch((err) => {
 
-      });
+      });*/
   }, [id]);
 
   return (
