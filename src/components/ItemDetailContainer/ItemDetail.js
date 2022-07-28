@@ -13,12 +13,12 @@ import { CartContext } from "../../CartContext";
 
 function ItemDetail(props) {
   const [cantidad, setCantidad] = useState(1);
-  const { productos, removeProductos, empresa, addProducto } =
-    useContext(CartContext);
+  const { addProducto } = useContext(CartContext);
   const onAdd = (qty) => {
     // setCantidad(qty)
     addProducto(props.producto, qty);
   };
+
   if (!props.producto) {
     return <div>Cargando!</div>;
   }

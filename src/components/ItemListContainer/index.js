@@ -1,8 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
-import { productos } from "../../util/productos";
 import { useParams } from "react-router";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 
@@ -15,10 +13,10 @@ function ItemListContainer(props) {
     const collections = collection(db, "productos");
     getDocs(collections).then((snapshot) => {
       let res = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-      if (id) {
-        res = productos.filter((producto) => producto.categoria == id);
-      }
 
+      if (id) {
+        res = res.filter((producto) => producto.categoria == id);
+      }
 
       setList(res);
     });
