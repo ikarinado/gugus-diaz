@@ -14,23 +14,15 @@ function ItemListContainer(props) {
     const db = getFirestore();
     const collections = collection(db, "productos");
     getDocs(collections).then((snapshot) => {
-      setList(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-    });
-    /*const task = new Promise((resolve, reject) => {
-      let res = productos;
+      let res = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
       if (id) {
         res = productos.filter((producto) => producto.categoria == id);
       }
-      setTimeout(resolve(res), 2000);
+
+
+      setList(res);
     });
 
-    task
-      .then((result) => {
-        setList(result);
-      })
-      .catch((err) => {
-
-      });*/
   }, [id]);
 
   return (

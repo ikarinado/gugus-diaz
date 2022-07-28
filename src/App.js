@@ -4,8 +4,8 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDatailContainer from "./components/ItemDetailContainer";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import ItemDetail from "./components/ItemDetailContainer/ItemDetail";
 import Cart from "./components/Cart";
+import Contactos from "./components/Contactos";
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
         <Route path='/item/:itemId' element={<ItemDatailContainer />} />
         <Route path='/cart' element={<Cart />} />
       </Routes>
+      <Contactos />
     </div>
   );
 }
