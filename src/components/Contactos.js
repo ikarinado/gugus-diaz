@@ -3,14 +3,12 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import Container from "@mui/material/Container";
-import { CenterFocusStrong } from "@mui/icons-material";
 import AdbIcon from "@mui/icons-material/AutoAwesome";
-
 
 const Contactos = () => {
   return (
-    <footer className='footer'>
-      <Container maxWidth='xl'>
+    <Container maxWidth='xl'>
+      <footer className='footer'>
         <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
         <Link to='/'>
           <Typography
@@ -29,23 +27,23 @@ const Contactos = () => {
             GUGUS
           </Typography>
         </Link>
-        <div className=' container '>
-          <p className=' float-end mb-1 '>
+        <div>
+          <p>
             <a href=' # '>Volver arriba</a>
           </p>
-          <p className=' mb-1 '>
+          <p>
             Album de Productos &copy; Estas buscando ropa para tus pequeños?
             visita nuestros sitios de venta online!
           </p>
-          <p className=' mb-0 '>
+          <p>
             Buscas ropa para los mas pequeños?{" "}
             <a href=' / '>Visita nuestra homepage</a> Ropa para cada miembro de
             la familia
             <a href=' ../getting-started/introduction/ '></a>.
           </p>
         </div>
-      </Container>
-    </footer>
+      </footer>
+    </Container>
   );
 };
 export default Contactos;
