@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
 import AdbIcon from "@mui/icons-material/AutoAwesome";
 import CardWidget from "./CardWidget";
 import { Link } from "react-router-dom";
@@ -44,14 +45,15 @@ const ResponsiveAppBar = () => {
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Link key={page.name} to={`/category/${page.id}`}>
-                <Typography
-
-                  sx={{ my: 2, color: "white", display: "block" }}
-                >
-                  {page.name}
-                </Typography>
-              </Link>
+              <Button
+                key={page.name}
+                to={`/category/${page.id}`}
+                component={Link}
+                variant="text"
+                sx={{color: 'white'}}
+              >
+                {page.name}
+              </Button>
             ))}
           </Box>
 

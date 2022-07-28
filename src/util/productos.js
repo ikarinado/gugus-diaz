@@ -5,7 +5,7 @@ export const productos = [
     precio: 1500,
     categoria: 1,
     imagen:
-      "https://admin.americabebes.com.ar/files/productos/img_1649860830731.jpg",
+      "https://http2.mlstatic.com/D_NQ_NP_757222-MLA49715502308_042022-V.jpg",
     stock: "Stock disponible: 10",
     detalle: "Buzo de algodon con friza",
   },
@@ -16,14 +16,14 @@ export const productos = [
     categoria: 2,
     imagen:
       "https://www.cottonclub.com.ar/pub/media/catalog/product/cache/65e2670acbf1788249a95924f3789a80/7/4/740_todas_copia_1.jpg",
-    stock: "Stock disponible: 10",
+    stock: "Stock disponible: 150",
     detalle: "Polera de algodon",
   },
   {
     id: 3,
     titulo: "Musculosa",
     precio:  900,
-    categoria: 3,
+    categoria: 2,
     imagen:
       "https://http2.mlstatic.com/D_NQ_NP_824836-MLA44185084527_112020-W.jpg",
     stock: "Stock disponible: 10",
@@ -31,11 +31,11 @@ export const productos = [
   },
   {
     id: 4,
-    titulo: "Calza",
+    titulo: "Body",
     precio: 2700,
     categoria: 4,
     imagen:
-      "https://www.aboutespanol.com/thmb/QOLEp-Qe27lAmB-IUDHgUNyxg-4=/900x668/filters:no_upscale():max_bytes(150000):strip_icc()/leggins-basicos-TCP-56a8076c3df78cf7729b84cb.jpg",
+      "https://www.dhresource.com/0x0/f2/albu/g9/M01/72/48/rBVaWFziZW6AM3l6AAKgZ3WD7DQ466.jpg/7-pcs-lot-summer-short-sleeve-rompers-cotton.jpg",
     stock: "Stock disponible: 10",
     detalle: "Calza de algodon con lycra ",
   },
@@ -48,4 +48,5 @@ export const productos = [
     stock: "Stock disponible: 10",
     detalle: "Camperas abrigadas",
   },
+
 ];
